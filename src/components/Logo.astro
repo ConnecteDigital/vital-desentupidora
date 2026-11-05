@@ -1,6 +1,7 @@
 ---
-// Logo provisório (marca + nome). Quando o cliente mandar o logo oficial,
-// troque este componente por <Image src={logo} ... /> com o arquivo em src/assets/.
+// Logo oficial da Vital Desentupidora (fundo transparente): src/assets/logo-vital.png
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-vital.png';
 import { site } from '../data/site';
 
 interface Props {
@@ -8,16 +9,7 @@ interface Props {
 }
 
 const { size = 'md' } = Astro.props;
+const width = size === 'lg' ? 260 : 180;
 ---
 
-<span class:list={['logo', `logo-${size}`]} aria-label={site.name} role="img">
-  <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true">
-    <rect width="48" height="48" rx="12" fill="#f97316" />
-    <path d="M24 8c0 0-11 13.2-11 20.4a11 11 0 0 0 22 0C35 21.2 24 8 24 8z" fill="#fff" />
-    <path d="M19.5 28.5a4.5 4.5 0 0 0 4.5 4.5" stroke="#f97316" stroke-width="3" fill="none" stroke-linecap="round" />
-  </svg>
-  <span class="logo-text" aria-hidden="true">
-    <strong>Vital</strong>
-    <small>Desentupidora</small>
-  </span>
-</span>
+<Image class:list={['logo', `logo-${size}`]} src={logo} alt={site.name} width={width} densities={[1, 2]} loading={size === 'md' ? 'eager' : 'lazy'} />

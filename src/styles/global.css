@@ -90,9 +90,6 @@ p { margin: 0 0 1em; }
 .topbar-phone { color: #fff; text-decoration: none; display: inline-flex; gap: 6px; align-items: center; white-space: nowrap; }
 .pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #7dffb2; margin-right: 6px; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 8px 0; }
-.header-inner { padding: 6px 0; }
-.brand img { width: 84px; height: auto; }
-@media (max-width: 480px) { .brand img { width: 64px; } }
 .nav-desktop { display: flex; gap: 28px; }
 .nav-desktop a { color: #dbe6fb; text-decoration: none; font-weight: 600; }
 .nav-desktop a:hover { color: #fff; }
@@ -268,7 +265,6 @@ p { margin: 0 0 1em; }
 /* footer */
 .site-footer { background: var(--navy-950); color: #b9c8e4; padding: 64px 0 120px; font-size: .95rem; }
 .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; }
-.footer-brand img { width: 140px; margin-bottom: 14px; }
 .footer-title { font-size: 1.3rem; color: #fff; margin: 0 0 12px; }
 .footer-title:not(:first-child) { margin-top: 28px; }
 .footer-links, .footer-contact { list-style: none; padding: 0; margin: 0; }
@@ -374,12 +370,11 @@ body:has(.nav-mobile[open]) .float-cta { display: none; }
 
 /* topo da home: foto de fundo escurecida e conteúdo centralizado */
 .hero-home { isolation: isolate; min-height: min(88vh, 760px); display: flex; align-items: center; }
-.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; z-index: -2; }
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 40%; z-index: -2; }
 .hero-home::before {
   content: ''; position: absolute; inset: 0; z-index: -1;
   background:
-    linear-gradient(180deg, rgba(5, 13, 31, .78) 0%, rgba(5, 13, 31, .7) 45%, rgba(5, 13, 31, .9) 100%),
-    radial-gradient(70% 60% at 50% 40%, rgba(var(--brand-rgb), .25), transparent 70%);
+    linear-gradient(180deg, rgba(7, 17, 31, .62) 0%, rgba(7, 17, 31, .5) 45%, rgba(7, 17, 31, .78) 100%);
 }
 .hero-center { display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 860px; }
 .hero-center h1 { font-size: clamp(2.3rem, 6vw, 4.2rem); }
@@ -396,22 +391,13 @@ body:has(.nav-mobile[open]) .float-cta { display: none; }
   }
 }
 
-/* logo provisório */
-.brand { text-decoration: none; }
-.logo { display: inline-flex; align-items: center; gap: 10px; color: #fff; }
-.logo-mark { width: 44px; height: 44px; flex: none; }
-.logo-text { display: flex; flex-direction: column; line-height: 1; }
-.logo-text strong { font: 800 1.75rem/0.9 var(--font-display); text-transform: uppercase; letter-spacing: .02em; }
-.logo-text small { font: 700 .82rem/1 var(--font-display); text-transform: uppercase; letter-spacing: .16em; color: var(--accent-300); margin-top: 3px; }
-.logo-lg .logo-mark { width: 56px; height: 56px; }
-.logo-lg .logo-text strong { font-size: 2.2rem; }
-.logo-lg .logo-text small { font-size: .95rem; }
-.header-inner { padding: 10px 0; }
-@media (max-width: 480px) {
-  .logo-mark { width: 38px; height: 38px; }
-  .logo-text strong { font-size: 1.5rem; }
-  .logo-text small { font-size: .72rem; }
-}
+/* logo */
+.brand { display: inline-flex; text-decoration: none; }
+.logo { display: block; height: auto; }
+.logo-md { width: 180px; }
+.logo-lg { width: 260px; }
+.header-inner { padding: 8px 0; }
+@media (max-width: 480px) { .logo-md { width: 140px; } }
 
 /* topo da home sem foto: fundo em gradiente */
 .hero-home:not(:has(.hero-bg))::before {
@@ -420,6 +406,7 @@ body:has(.nav-mobile[open]) .float-cta { display: none; }
     radial-gradient(50% 60% at 5% 100%, rgba(var(--brand-rgb), .14), transparent 60%);
 }
 .about-grid.no-photo { grid-template-columns: 1fr; }
-.footer-brand .logo { margin-bottom: 14px; }
+.footer-brand .logo { margin-bottom: 16px; }
 .topbar-short { display: none; }
 @media (max-width: 480px) { .topbar-long { display: none; } .topbar-short { display: inline; } }
+.hero-center h1, .hero-center .hero-lead, .hero-center .eyebrow { text-shadow: 0 2px 14px rgba(0, 0, 0, .55); }
