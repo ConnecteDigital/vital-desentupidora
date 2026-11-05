@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaButtons from '../components/CtaButtons.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+import { bairrosPorZona, bairroPath, zonasPrioritarias } from '../data/bairros';
+import { breadcrumbSchema } from '../data/schema';
+
+const crumbs = [
+  { name: 'Início', path: '/' },
+  { name: 'Áreas atendidas', path: '/areas-atendidas/' },
+];
+---
+
+<Base
+  title={`Áreas Atendidas: Desentupidora 24h em Campinas e Região | ${site.name}`}
+  description={`Desentupidora 24 horas em Campinas, Sumaré, Hortolândia, Paulínia, Valinhos, Indaiatuba, Americana, Piracicaba, Limeira e região. Chegamos em até ${site.arrivalMinutes} minutos.`}
+  schema={[breadcrumbSchema(crumbs)]}
+>
+  <section class="hero page-hero">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <span class="eyebrow">Áreas atendidas</span>
+      <h1>Desentupidora em Campinas e região</h1>
+      <p class="hero-lead">Atendemos 24 horas em Campinas e nas cidades do DDD 19. Encontre a sua cidade ou bairro.</p>
+      <CtaButtons />
+    </div>
+  </section>
+  <section class="section section-soft">
+    <div class="container zones">
+      {
+        bairrosPorZona().map((g) => (
+          <div class:list={['zone', { 'is-priority': zonasPrioritarias.includes(g.zona) }]}>
+            <h2 style="font-size:1.6rem">
+              {g.zona}
+              {zonasPrioritarias.includes(g.zona) && <span class="tag">Foco</span>}
+            </h2>
+            <ul>
+              {g.bairros.map((b) => (
+                <li>
+                  <a href={bairroPath(b)}>
+                    <Icon name="pin" size={16} /> Desentupidora em {b.nome}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+  <CtaBand />
+</Base>

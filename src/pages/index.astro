@@ -1,0 +1,247 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaButtons from '../components/CtaButtons.astro';
+import CtaBand from '../components/CtaBand.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FaqList from '../components/FaqList.astro';
+import Icon from '../components/Icon.astro';
+import Gallery from '../components/Gallery.astro';
+import { Image } from 'astro:assets';
+import { fotoDoServico, temFotos } from '../data/fotos';
+import { site } from '../data/site';
+import { servicos } from '../data/servicos';
+import { bairrosPorZona, bairroPath, zonasPrioritarias } from '../data/bairros';
+import { faqSchema } from '../data/schema';
+import { getCollection } from 'astro:content';
+
+const faq = [
+  {
+    q: 'O atendimento é 24 horas mesmo?',
+    a: `Sim. Atendemos 24 horas por dia, 7 dias por semana, incluindo fins de semana e feriados, em ${site.region}.`,
+  },
+  {
+    q: 'Em quanto tempo vocês chegam?',
+    a: `Nossa equipe chega em até ${site.arrivalMinutes} minutos nas regiões atendidas.`,
+  },
+  {
+    q: 'Precisa quebrar piso ou parede para desentupir?',
+    a: 'Na grande maioria dos casos, não. Trabalhamos com máquinas que alcançam a obstrução por dentro da tubulação. Só indicamos abertura quando o cano está quebrado ou afundado, e sempre com o seu aceite antes.',
+  },
+  {
+    q: 'Os serviços têm garantia?',
+    a: `Sim. Todos os serviços da ${site.name} têm garantia.`,
+  },
+  {
+    q: 'Quais cidades vocês atendem?',
+    a: 'Campinas e cidades da região, como Sumaré, Hortolândia, Paulínia, Valinhos, Vinhedo, Indaiatuba, Americana, Santa Bárbara d’Oeste, Piracicaba, Limeira, Jaguariúna e Mogi Mirim.',
+  },
+  {
+    q: 'Como chamo a desentupidora?',
+    a: `É só chamar no WhatsApp ou ligar. Conte o que entupiu, de preferência com uma foto ou vídeo, e a equipe sai na hora para chegar em até ${site.arrivalMinutes} minutos.`,
+  },
+];
+
+const fotoEquipe = fotoDoServico('desentupimento-de-esgoto');
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.data.getTime() - a.data.data.getTime())
+  .slice(0, 3);
+---
+
+<Base
+  title={`Desentupidora 24h em Campinas | Chegamos em ${site.arrivalMinutes} min | ${site.name}`}
+  description={site.description}
+  schema={[faqSchema(faq)]}
+>
+  <section class="hero hero-home">
+    {
+      fotoEquipe && (
+        <Image
+          class="hero-bg"
+          src={fotoEquipe.src}
+          alt=""
+          widths={[480, 800, 1200, 1600]}
+          sizes="100vw"
+          loading="eager"
+          fetchpriority="high"
+        />
+      )
+    }
+    <div class="container hero-center">
+      <span class="eyebrow">Desentupidora em Campinas e região · Plantão 24h</span>
+      <h1>Desentupidora 24 horas em Campinas: <em>chegamos em até {site.arrivalMinutes} minutos</em></h1>
+      <p class="hero-lead">Esgoto, pia, vaso ou ralo entupido? Resolvemos hoje, a qualquer hora, sem quebra-quebra e com garantia.</p>
+      <CtaButtons />
+      <ul class="hero-badges">
+        <li><Icon name="clock" size={22} /> <span>Atendimento 24h</span></li>
+        <li><Icon name="bolt" size={22} /> <span>Chegada em até {site.arrivalMinutes} min</span></li>
+        <li><Icon name="shield" size={22} /> <span>Serviço com garantia</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="trust" aria-label="Diferenciais">
+    <div class="container trust-grid">
+      <div class="trust-item"><Icon name="clock" size={34} /><div><strong>24 horas</strong><span>Todos os dias, inclusive feriados</span></div></div>
+      <div class="trust-item"><Icon name="bolt" size={34} /><div><strong>{site.arrivalMinutes} minutos</strong><span>Tempo de chegada</span></div></div>
+      <div class="trust-item"><Icon name="shield" size={34} /><div><strong>Garantia</strong><span>Em todos os serviços</span></div></div>
+      <div class="trust-item"><Icon name="pin" size={34} /><div><strong>Região 19</strong><span>Campinas e cidades vizinhas</span></div></div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="servicos">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Nossos serviços</span>
+        <h2>Serviços de desentupimento em Campinas</h2>
+        <p>Da pia da cozinha à coluna de esgoto do prédio: desentupimos casas, apartamentos, condomínios, comércios e empresas.</p>
+      </div>
+      <div class="services-grid">
+        {servicos.map((s) => <ServiceCard servico={s} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Do chamado ao cano desentupido</h2>
+        <p>Sem enrolação: você chama, a gente chega e resolve.</p>
+      </div>
+      <div class="steps">
+        <div class="step-card">
+          <h3>Chame no WhatsApp ou ligue</h3>
+          <p>Conte o que entupiu. Se puder, mande uma foto ou um vídeo do problema.</p>
+        </div>
+        <div class="step-card">
+          <h3>Chegamos em até {site.arrivalMinutes} minutos</h3>
+          <p>Assim que você chama, a equipe já sai para o endereço com as máquinas de desentupimento.</p>
+        </div>
+        <div class="step-card">
+          <h3>Desentupido e com garantia</h3>
+          <p>Desobstruímos, testamos o escoamento na sua frente e deixamos o local limpo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class:list={['container', 'about-grid', { 'no-photo': !fotoEquipe }]}>
+      {
+        fotoEquipe && (
+          <div class="about-photo">
+            <Image src={fotoEquipe.src} alt={fotoEquipe.alt} widths={[400, 600, 800]} sizes="(max-width: 900px) 100vw, 460px" />
+          </div>
+        )
+      }
+      <div>
+        <div class="section-head">
+          <span class="eyebrow">Por que a {site.name}</span>
+          <h2>Desentupidora de confiança, a qualquer hora</h2>
+          <p>Equipe equipada para resolver desde a pia da cozinha até a rede de esgoto de um condomínio.</p>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <Icon name="clock" size={30} />
+            <div><h3>Plantão 24 horas</h3><p>Entupimento não espera horário comercial. Atendemos de madrugada, fins de semana e feriados.</p></div>
+          </div>
+          <div class="feature">
+            <Icon name="bolt" size={30} />
+            <div><h3>Chegamos em {site.arrivalMinutes} minutos</h3><p>Esgoto voltando não pode esperar. Em até {site.arrivalMinutes} minutos a equipe está na sua porta.</p></div>
+          </div>
+          <div class="feature">
+            <Icon name="shield" size={30} />
+            <div><h3>Garantia no serviço</h3><p>Todo desentupimento sai com garantia. Se voltar a entupir, voltamos para resolver.</p></div>
+          </div>
+          <div class="feature">
+            <Icon name="check" size={30} />
+            <div><h3>Sem quebra-quebra</h3><p>Máquinas de cabo rotativo e hidrojateamento desentopem por dentro do cano, sem quebrar piso sempre que possível.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+
+  {
+    temFotos() && (
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Trabalhos realizados</span>
+            <h2>Serviços que já fizemos</h2>
+            <p>Fotos reais de atendimentos da {site.name} em Campinas e região.</p>
+          </div>
+          <Gallery limit={8} exclude="desentupimento-de-esgoto" />
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section section-soft" id="areas">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Áreas atendidas</span>
+        <h2>Desentupidora perto de você</h2>
+        <p>Atendemos Campinas e as cidades da região do DDD 19.</p>
+      </div>
+      <div class="zones">
+        {
+          bairrosPorZona().map((g) => (
+            <div class:list={['zone', { 'is-priority': zonasPrioritarias.includes(g.zona) }]}>
+              <h3>
+                {g.zona}
+                {zonasPrioritarias.includes(g.zona) && <span class="tag">Foco</span>}
+              </h3>
+              <ul>
+                {g.bairros.map((b) => (
+                  <li>
+                    <a href={bairroPath(b)}>
+                      <Icon name="pin" size={16} /> Desentupidora em {b.nome}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {
+    posts.length > 0 && (
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Blog</span>
+            <h2>Dicas contra entupimento</h2>
+          </div>
+          <div class="posts">
+            {posts.map((p) => (
+              <a class="post-card" href={`/blog/${p.id}/`}>
+                <time datetime={p.data.data.toISOString()}>{p.data.data.toLocaleDateString('pt-BR')}</time>
+                <h3>{p.data.titulo}</h3>
+                <p>{p.data.descricao}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section section-soft">
+    <div class="container" style="max-width: 860px">
+      <div class="section-head">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2>Perguntas frequentes</h2>
+      </div>
+      <FaqList items={faq} />
+    </div>
+  </section>
+
+  <CtaBand title="Precisa de uma desentupidora agora?" />
+</Base>

@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaButtons from '../../components/CtaButtons.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import { site } from '../../data/site';
+import { servicos } from '../../data/servicos';
+import { breadcrumbSchema } from '../../data/schema';
+
+const crumbs = [
+  { name: 'Início', path: '/' },
+  { name: 'Serviços', path: '/servicos/' },
+];
+---
+
+<Base
+  title={`Serviços de Desentupimento em Campinas 24h | ${site.name}`}
+  description={`Todos os serviços da ${site.name} em Campinas e região: desentupimento de esgoto, pia, vaso sanitário, ralo, tanque, coluna de prédio, caixa de gordura e hidrojateamento. Atendimento 24h.`}
+  schema={[breadcrumbSchema(crumbs)]}
+>
+  <section class="hero page-hero">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <span class="eyebrow">Serviços</span>
+      <h1>Serviços de desentupimento em Campinas</h1>
+      <p class="hero-lead">Desentupimento sem quebra-quebra, 24 horas, com chegada em até {site.arrivalMinutes} minutos e garantia.</p>
+      <CtaButtons />
+    </div>
+  </section>
+  <section class="section section-soft">
+    <div class="container">
+      <div class="services-grid">
+        {servicos.map((s) => <ServiceCard servico={s} />)}
+      </div>
+    </div>
+  </section>
+  <CtaBand />
+</Base>

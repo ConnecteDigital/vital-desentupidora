@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCollection } from 'astro:content';
+import { breadcrumbSchema } from '../../data/schema';
+import { site } from '../../data/site';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.data.getTime() - a.data.data.getTime());
+const crumbs = [
+  { name: 'Início', path: '/' },
+  { name: 'Blog', path: '/blog/' },
+];
+---
+
+<Base
+  title={`Blog: Dicas Contra Entupimento | ${site.name}`}
+  description="Dicas práticas para evitar e resolver entupimentos de pia, vaso, ralo, esgoto e caixa de gordura em casas, apartamentos e comércios."
+  schema={[breadcrumbSchema(crumbs)]}
+>
+  <section class="hero page-hero">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <span class="eyebrow">Blog</span>
+      <h1>Dicas contra entupimento</h1>
+      <p class="hero-lead">O que fazer quando entope, como evitar novos entupimentos e quando chamar a desentupidora.</p>
+    </div>
+  </section>
+  <section class="section section-soft">
+    <div class="container posts">
+      {
+        posts.map((p) => (
+          <a class="post-card" href={`/blog/${p.id}/`}>
+            <time datetime={p.data.data.toISOString()}>{p.data.data.toLocaleDateString('pt-BR')}</time>
+            <h2>{p.data.titulo}</h2>
+            <p>{p.data.descricao}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+  <CtaBand />
+</Base>
