@@ -42,7 +42,7 @@ const faq = [
   },
 ];
 
-// Foto do topo (escurecida no CSS) e da seção "Por que a Vital"
+// Foto do topo (escurecida no CSS) e da seção "Por que a Prime SP"
 const fotoEquipe = { src: heroFoto, alt: `Técnico da ${site.name} desentupindo ralo com máquina de cabo rotativo` };
 
 const posts = (await getCollection('blog'))
@@ -51,7 +51,7 @@ const posts = (await getCollection('blog'))
 ---
 
 <Base
-  title={`Desentupidora 24h em São Paulo | Chegamos em ${site.arrivalMinutes} min | ${site.name}`}
+  title={`Desentupidora 24h em São Paulo | Chegamos em ${site.arrivalMinutes} min | ${site.shortName}`}
   description={site.description}
   schema={[faqSchema(faq)]}
 >

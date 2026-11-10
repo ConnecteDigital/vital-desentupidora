@@ -40,7 +40,7 @@ const msg = `Olá! Vim pelo site da ${site.name} e preciso de ${servico.nome.toL
 ---
 
 <Base
-  title={`${servico.keyword} 24h | ${site.name}`}
+  title={`${servico.keyword} 24h | ${site.shortName}`}
   description={servico.metaDescription}
   schema={[serviceSchema(servico), faqSchema(faq), breadcrumbSchema(crumbs)]}
 >

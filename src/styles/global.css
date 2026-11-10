@@ -394,10 +394,10 @@ body:has(.nav-mobile[open]) .float-cta { display: none; }
 /* logo */
 .brand { display: inline-flex; text-decoration: none; }
 .logo { display: block; height: auto; }
-.logo-md { width: 180px; }
-.logo-lg { width: 260px; }
-.header-inner { padding: 8px 0; }
-@media (max-width: 480px) { .logo-md { width: 140px; } }
+.logo-md { width: 84px; }
+.logo-lg { width: 160px; }
+.header-inner { padding: 6px 0; }
+@media (max-width: 480px) { .logo-md { width: 64px; } }
 
 /* topo da home sem foto: fundo em gradiente */
 .hero-home:not(:has(.hero-bg))::before {

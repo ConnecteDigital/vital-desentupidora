@@ -31,7 +31,7 @@ export const servicos: Servico[] = [
     icon: 'pipe',
     destaque: true,
     intro: [
-      'Esgoto entupido é emergência: água suja voltando pelo ralo, mau cheiro no quintal e caixa de inspeção transbordando. A Vital Desentupidora atende 24 horas, inclusive fins de semana e feriados, em toda a cidade de São Paulo e na Grande SP.',
+      'Esgoto entupido é emergência: água suja voltando pelo ralo, mau cheiro no quintal e caixa de inspeção transbordando. A Desentupidora Prime SP atende 24 horas, inclusive fins de semana e feriados, em toda a cidade de São Paulo e na Grande SP.',
       'Usamos máquinas de cabo rotativo (molas) e, quando necessário, hidrojateamento para remover gordura, raízes, areia e objetos da rede, sem quebrar piso nem parede sempre que possível.',
     ],
     sinais: [
@@ -58,7 +58,7 @@ export const servicos: Servico[] = [
       },
       {
         q: 'O desentupimento de esgoto tem garantia?',
-        a: 'Sim, todo serviço da Vital Desentupidora sai com garantia.',
+        a: 'Sim, todo serviço da Desentupidora Prime SP sai com garantia.',
       },
     ],
   },

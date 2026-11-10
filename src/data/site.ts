@@ -12,9 +12,11 @@ function formatPhone(d: string) {
 }
 
 export const site = {
-  name: 'Vital Desentupidora',
+  name: 'Desentupidora Prime SP',
+  // Nome curto, usado no fim dos títulos das páginas
+  shortName: 'Prime SP',
   // ⚠️ PROVISÓRIO: confirmar o domínio
-  url: 'https://www.vitaldesentupidora.com.br',
+  url: 'https://www.desentupidoraprimesp.com.br',
   city: 'São Paulo',
   region: 'São Paulo e Grande SP',
   state: 'SP',
@@ -28,7 +30,7 @@ export const site = {
 };
 
 export const DEFAULT_WHATSAPP_MESSAGE =
-  'Olá! Vim pelo site da Vital Desentupidora e preciso de um desentupimento.';
+  'Olá! Vim pelo site da Desentupidora Prime SP e preciso de um desentupimento.';
 
 export function whatsappUrl(message: string = DEFAULT_WHATSAPP_MESSAGE) {
   return `https://api.whatsapp.com/send?phone=${site.phoneDigits}&text=${encodeURIComponent(message)}`;

@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://www.vitaldesentupidora.com.br',
+  site: 'https://www.desentupidoraprimesp.com.br',
   trailingSlash: 'always',
   integrations: [sitemap()],
 });

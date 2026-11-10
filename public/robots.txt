@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.vitaldesentupidora.com.br/sitemap-index.xml
+Sitemap: https://www.desentupidoraprimesp.com.br/sitemap-index.xml

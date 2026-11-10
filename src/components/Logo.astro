@@ -1,7 +1,7 @@
 ---
-// Logo oficial da Vital Desentupidora (fundo transparente): src/assets/logo-vital.png
+// Logo oficial da Desentupidora Prime SP (redondo, fundo transparente): src/assets/logo-prime.png
 import { Image } from 'astro:assets';
-import logo from '../assets/logo-vital.png';
+import logo from '../assets/logo-prime.png';
 import { site } from '../data/site';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { size = 'md' } = Astro.props;
-const width = size === 'lg' ? 260 : 180;
+const width = size === 'lg' ? 160 : 84;
 ---
 
 <Image class:list={['logo', `logo-${size}`]} src={logo} alt={site.name} width={width} densities={[1, 2]} loading={size === 'md' ? 'eager' : 'lazy'} />

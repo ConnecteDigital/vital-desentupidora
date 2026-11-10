@@ -1,4 +1,4 @@
-# Vital Desentupidora · site
+# Desentupidora Prime SP · site
 
 Site de desentupidora 24h em São Paulo e Grande SP (DDD 11), com foco em SEO local e tráfego do Google Ads.
 Feito com [Astro](https://astro.build), gera páginas estáticas, sem animações, e é publicado na Vercel.
