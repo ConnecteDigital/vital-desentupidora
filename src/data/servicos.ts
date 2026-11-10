@@ -202,37 +202,6 @@ export const servicos: Servico[] = [
     ],
   },
   {
-    slug: 'desentupimento-de-coluna',
-    nome: 'Desentupimento de Coluna de Prédio',
-    keyword: 'Desentupimento de coluna de prédio em São Paulo',
-    resumo: 'Colunas de esgoto e prumadas de condomínios desentupidas, com atendimento a síndicos e administradoras.',
-    metaDescription:
-      'Desentupimento de coluna e prumada de esgoto em prédios e condomínios de São Paulo e Grande SP. Atendimento 24h para síndicos, com garantia.',
-    icon: 'building',
-    intro: [
-      'Quando a coluna de esgoto de um prédio entope, o problema aparece nos andares de baixo: água voltando pelo ralo, pela pia ou pelo vaso de vários apartamentos ao mesmo tempo.',
-      'Desentupimos colunas de esgoto, de gordura e de águas pluviais em prédios residenciais e comerciais, com equipamento para tubulações longas e atendimento direto ao síndico ou zelador.',
-    ],
-    sinais: [
-      'Retorno de esgoto nos apartamentos dos primeiros andares',
-      'Vários moradores reclamando de escoamento lento',
-      'Mau cheiro nas áreas comuns ou na garagem',
-      'Coluna de gordura da cozinha transbordando',
-    ],
-    comoFazemos: [
-      'Identificamos qual coluna e em que altura está a obstrução',
-      'Acessamos pelas visitas (bocas de inspeção) ou pelo térreo',
-      'Desobstruímos a coluna inteira com máquina ou hidrojateamento',
-      'Entregamos relatório do serviço ao síndico',
-    ],
-    faq: [
-      {
-        q: 'Atendem condomínios com contrato de manutenção?',
-        a: 'Fale com a gente pelo WhatsApp para combinarmos um plano de manutenção preventiva para o seu condomínio.',
-      },
-    ],
-  },
-  {
     slug: 'hidrojateamento',
     nome: 'Hidrojateamento',
     keyword: 'Hidrojateamento em São Paulo',
@@ -242,7 +211,7 @@ export const servicos: Servico[] = [
     icon: 'jet',
     intro: [
       'O hidrojateamento usa água em alta pressão para limpar a tubulação por dentro, removendo gordura, lodo, areia e raízes que a máquina de cabo só consegue furar.',
-      'É indicado para redes de esgoto com entupimentos repetidos, colunas de gordura de prédios, restaurantes e tubulações de diâmetro maior.',
+      'É indicado para redes de esgoto com entupimentos repetidos, caixas e ramais de gordura de restaurantes e tubulações de diâmetro maior.',
     ],
     sinais: [
       'Entupimentos que voltam poucas semanas depois',
@@ -260,35 +229,6 @@ export const servicos: Servico[] = [
       {
         q: 'Hidrojateamento danifica o cano?',
         a: 'Não, quando feito com a pressão e o bico corretos para cada tipo de tubulação. Ele limpa sem quebrar e sem produtos químicos.',
-      },
-    ],
-  },
-  {
-    slug: 'desentupimento-de-tanque',
-    nome: 'Desentupimento de Tanque',
-    keyword: 'Desentupimento de tanque e máquina de lavar em São Paulo',
-    resumo: 'Tanque e saída da máquina de lavar desentupidos, sem água voltando na área de serviço.',
-    metaDescription:
-      'Tanque ou saída da máquina de lavar entupida? Desentupidora 24h em São Paulo e Grande SP. Chegamos em até 30 minutos, com garantia.',
-    icon: 'faucet',
-    intro: [
-      'Sabão em pó, fiapos de roupa e areia vão se acumulando na tubulação do tanque e da máquina de lavar. Um dia a máquina esvazia e a água volta pelo ralo da área de serviço.',
-      'Desentupimos o tanque, a saída da máquina de lavar e o ralo da lavanderia, limpando a tubulação até a rede de esgoto.',
-    ],
-    sinais: [
-      'Água voltando pelo ralo quando a máquina esvazia',
-      'Tanque demorando para escoar',
-      'Espuma saindo pelo ralo da área de serviço',
-    ],
-    comoFazemos: [
-      'Verificamos sifão, ralo e caixa sifonada da área de serviço',
-      'Desobstruímos a tubulação com máquina de cabo rotativo',
-      'Testamos com a máquina de lavar em funcionamento',
-    ],
-    faq: [
-      {
-        q: 'Posso usar a máquina de lavar com o ralo entupido?',
-        a: 'Melhor não. A água volta e pode alagar a área de serviço e outros cômodos. Desligue a máquina e chame a gente.',
       },
     ],
   },

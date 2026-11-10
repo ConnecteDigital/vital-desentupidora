@@ -24,7 +24,7 @@ A pia da cozinha é o ponto que mais entope numa casa. O motivo quase sempre é 
 ## Quando chamar a desentupidora
 
 - A pia entupiu de novo pouco tempo depois de você desentupir;
-- A água volta em outro ponto (ralo, tanque) quando a pia escoa;
+- A água volta em outro ponto (ralo ou outra pia) quando a pia escoa;
 - A caixa de gordura está cheia ou com mau cheiro;
 - Você limpou o sifão e a água continua parada.
 

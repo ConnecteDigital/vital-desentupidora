@@ -26,7 +26,7 @@ export const site = {
   // ⚠️ PROVISÓRIO: confirmar o tempo de chegada com o cliente
   arrivalMinutes: 30,
   description:
-    'Desentupidora 24 horas em São Paulo e Grande SP. Desentupimento de esgoto, pia, vaso sanitário, ralo, caixa de gordura e coluna de prédio. Chegamos em até 30 minutos, com garantia.',
+    'Desentupidora 24 horas em São Paulo e Grande SP. Desentupimento de esgoto, pia, vaso sanitário, ralo e caixa de gordura, além de hidrojateamento. Chegamos em até 30 minutos, com garantia.',
 };
 
 export const DEFAULT_WHATSAPP_MESSAGE =

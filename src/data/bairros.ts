@@ -38,7 +38,7 @@ export const bairros: Bairro[] = [
   {
     slug: 'zona-sul', nome: 'Zona Sul', em: 'na Zona Sul', zona: 'São Paulo (capital)', tipo: 'zona',
     sobre:
-      'A Zona Sul é a maior região da capital, com prédios em Moema, Vila Mariana e Brooklin e bairros de casas em Santo Amaro, Jabaquara e Cidade Ademar. Atendemos de coluna de prédio e caixa de gordura de restaurante até esgoto entupido em casa térrea.',
+      'A Zona Sul é a maior região da capital, com prédios em Moema, Vila Mariana e Brooklin e bairros de casas em Santo Amaro, Jabaquara e Cidade Ademar. Atendemos de caixa de gordura de restaurante até esgoto entupido em casa térrea.',
     vizinhos: ['Moema', 'Vila Mariana', 'Saúde', 'Brooklin', 'Santo Amaro', 'Campo Belo', 'Jabaquara', 'Ipiranga', 'Interlagos', 'Campo Limpo'],
   },
   {
@@ -56,7 +56,7 @@ export const bairros: Bairro[] = [
   {
     slug: 'centro-de-sp', nome: 'Centro de SP', em: 'no Centro de SP', zona: 'São Paulo (capital)', tipo: 'zona',
     sobre:
-      'O Centro concentra prédios antigos, comércio e muitos restaurantes e lanchonetes. Colunas de esgoto de prédios antigos e caixas de gordura de cozinhas comerciais estão entre os nossos chamados mais frequentes na região central.',
+      'O Centro concentra prédios antigos, comércio e muitos restaurantes e lanchonetes. Redes de esgoto antigas e caixas de gordura de cozinhas comerciais estão entre os nossos chamados mais frequentes na região central.',
     vizinhos: ['República', 'Sé', 'Bela Vista', 'Consolação', 'Higienópolis', 'Santa Cecília', 'Liberdade', 'Bom Retiro', 'Brás', 'Cambuci'],
   },
 
@@ -64,7 +64,7 @@ export const bairros: Bairro[] = [
   {
     slug: 'santo-andre', nome: 'Santo André', em: 'em Santo André', zona: 'ABC Paulista', tipo: 'cidade',
     sobre:
-      'Santo André tem prédios no centro e no Jardim, casas e sobrados nos bairros residenciais e muito comércio. Atendemos desentupimento de esgoto, coluna de prédio e caixa de gordura em toda a cidade.',
+      'Santo André tem prédios no centro e no Jardim, casas e sobrados nos bairros residenciais e muito comércio. Atendemos desentupimento de esgoto, pia, vaso e caixa de gordura em toda a cidade.',
     vizinhos: ['São Bernardo do Campo', 'São Caetano do Sul', 'Mauá'],
   },
   {
@@ -76,13 +76,13 @@ export const bairros: Bairro[] = [
   {
     slug: 'sao-caetano-do-sul', nome: 'São Caetano do Sul', em: 'em São Caetano do Sul', zona: 'ABC Paulista', tipo: 'cidade',
     sobre:
-      'São Caetano do Sul é uma cidade compacta e bem verticalizada, com muitos prédios residenciais. Os chamados mais comuns são coluna de esgoto, pia de apartamento e caixa de gordura de condomínio.',
+      'São Caetano do Sul é uma cidade compacta e bem verticalizada, com muitos prédios residenciais. Os chamados mais comuns são pia de apartamento, vaso sanitário e caixa de gordura de condomínio.',
     vizinhos: ['Santo André', 'São Bernardo do Campo', 'Zona Sul de SP'],
   },
   {
     slug: 'diadema', nome: 'Diadema', em: 'em Diadema', zona: 'ABC Paulista', tipo: 'cidade',
     sobre:
-      'Diadema tem bairros densos de casas e sobrados e muitas indústrias. Atendemos esgoto, vaso sanitário, ralo e tanque entupidos, além de caixa de gordura em comércios e empresas.',
+      'Diadema tem bairros densos de casas e sobrados e muitas indústrias. Atendemos esgoto, vaso sanitário, pia e ralo entupidos, além de caixa de gordura em comércios e empresas.',
     vizinhos: ['São Bernardo do Campo', 'Zona Sul de SP', 'Santo André'],
   },
   {
@@ -102,7 +102,7 @@ export const bairros: Bairro[] = [
   {
     slug: 'osasco', nome: 'Osasco', em: 'em Osasco', zona: 'Região Oeste', tipo: 'cidade',
     sobre:
-      'Osasco tem um centro comercial forte, prédios novos e bairros grandes de casas. Atendemos desentupimento de esgoto, coluna de prédio, caixa de gordura e hidrojateamento em toda a cidade.',
+      'Osasco tem um centro comercial forte, prédios novos e bairros grandes de casas. Atendemos desentupimento de esgoto, caixa de gordura e hidrojateamento em toda a cidade.',
     vizinhos: ['Carapicuíba', 'Barueri', 'Zona Oeste de SP'],
   },
   {
@@ -138,7 +138,7 @@ export const bairros: Bairro[] = [
   {
     slug: 'jandira', nome: 'Jandira', em: 'em Jandira', zona: 'Região Oeste', tipo: 'cidade',
     sobre:
-      'Jandira é uma cidade residencial, com muitas casas e sobrados. Atendemos desentupimento de esgoto, tanque, ralo e caixa de gordura com chegada rápida.',
+      'Jandira é uma cidade residencial, com muitas casas e sobrados. Atendemos desentupimento de esgoto, pia, ralo e caixa de gordura com chegada rápida.',
     vizinhos: ['Barueri', 'Itapevi', 'Carapicuíba'],
   },
 
@@ -158,7 +158,7 @@ export const bairros: Bairro[] = [
   {
     slug: 'franco-da-rocha', nome: 'Franco da Rocha', em: 'em Franco da Rocha', zona: 'Região Norte', tipo: 'cidade',
     sobre:
-      'Franco da Rocha tem muitos bairros de casas e comércio no centro. Atendemos desentupimento de esgoto, pia, vaso e tanque, a qualquer hora.',
+      'Franco da Rocha tem muitos bairros de casas e comércio no centro. Atendemos desentupimento de esgoto, pia, vaso e ralo, a qualquer hora.',
     vizinhos: ['Caieiras', 'Francisco Morato', 'Mairiporã'],
   },
   {
@@ -184,7 +184,7 @@ export const bairros: Bairro[] = [
   {
     slug: 'mogi-das-cruzes', nome: 'Mogi das Cruzes', em: 'em Mogi das Cruzes', zona: 'Alto Tietê', tipo: 'cidade',
     sobre:
-      'Mogi das Cruzes é a maior cidade do Alto Tietê, com prédios no centro, bairros de casas e chácaras. Atendemos desentupimento de esgoto, coluna de prédio e caixa de gordura em toda a cidade.',
+      'Mogi das Cruzes é a maior cidade do Alto Tietê, com prédios no centro, bairros de casas e chácaras. Atendemos desentupimento de esgoto, pia, vaso e caixa de gordura em toda a cidade.',
     vizinhos: ['Suzano', 'Arujá', 'Biritiba Mirim'],
   },
   {
@@ -196,7 +196,7 @@ export const bairros: Bairro[] = [
   {
     slug: 'itaquaquecetuba', nome: 'Itaquaquecetuba', em: 'em Itaquaquecetuba', zona: 'Alto Tietê', tipo: 'cidade',
     sobre:
-      'Itaquaquecetuba é uma cidade populosa, com muitas casas e sobrados. Esgoto entupido, vaso sanitário e tanque são os chamados mais comuns.',
+      'Itaquaquecetuba é uma cidade populosa, com muitas casas e sobrados. Esgoto entupido, vaso sanitário e pia de cozinha são os chamados mais comuns.',
     vizinhos: ['Poá', 'Suzano', 'Arujá', 'Guarulhos'],
   },
   {
@@ -222,7 +222,7 @@ export const bairros: Bairro[] = [
   {
     slug: 'taboao-da-serra', nome: 'Taboão da Serra', em: 'em Taboão da Serra', zona: 'Região Sudoeste', tipo: 'cidade',
     sobre:
-      'Taboão da Serra é uma cidade densa, com muitos prédios e casas, colada à Zona Sul e à Zona Oeste da capital. Atendemos coluna de prédio, pia, vaso e esgoto entupidos.',
+      'Taboão da Serra é uma cidade densa, com muitos prédios e casas, colada à Zona Sul e à Zona Oeste da capital. Atendemos pia, vaso, ralo e esgoto entupidos.',
     vizinhos: ['Embu das Artes', 'Zona Sul de SP', 'Zona Oeste de SP'],
   },
   {

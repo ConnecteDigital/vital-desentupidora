@@ -63,7 +63,7 @@ const msg = `Olá! Vim pelo site da ${site.name} e preciso de ${servico.nome.toL
           foto && (
             <figure class="service-figure">
               <Image src={foto.src} alt={foto.alt} widths={[480, 800, 1100]} sizes="(max-width: 960px) 100vw, 760px" />
-              <figcaption>{servico.nome}: serviço realizado pela {site.name} em São Paulo e Grande SP.</figcaption>
+              <figcaption>{servico.nome} em São Paulo e Grande SP.</figcaption>
             </figure>
           )
         }
@@ -118,8 +118,8 @@ const msg = `Olá! Vim pelo site da ${site.name} e preciso de ${servico.nome.toL
       <section class="section section-soft">
         <div class="container">
           <div class="section-head">
-            <span class="eyebrow">Trabalhos realizados</span>
-            <h2>Outros serviços que fizemos</h2>
+            <span class="eyebrow">Outros serviços</span>
+            <h2>Conheça também</h2>
           </div>
           <Gallery limit={8} exclude={servico.slug} />
         </div>

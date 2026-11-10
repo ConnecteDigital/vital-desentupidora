@@ -9,6 +9,7 @@ import Gallery from '../components/Gallery.astro';
 import { Image } from 'astro:assets';
 import { temFotos } from '../data/fotos';
 import heroFoto from '../assets/hero.jpg';
+import sobreFoto from '../assets/sobre.jpg';
 import { site } from '../data/site';
 import { servicos } from '../data/servicos';
 import { bairrosPorZona, bairroPath, zonasPrioritarias } from '../data/bairros';
@@ -43,7 +44,8 @@ const faq = [
 ];
 
 // Foto do topo (escurecida no CSS) e da seção "Por que a Prime SP"
-const fotoEquipe = { src: heroFoto, alt: `Técnico da ${site.name} desentupindo ralo com máquina de cabo rotativo` };
+const fotoEquipe = { src: heroFoto, alt: 'Técnico desentupindo ralo com máquina de cabo rotativo' };
+const fotoSobre = { src: sobreFoto, alt: 'Técnico com caixa de ferramentas consertando vaso sanitário' };
 
 const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.data.getTime() - a.data.data.getTime())
@@ -96,7 +98,7 @@ const posts = (await getCollection('blog'))
       <div class="section-head">
         <span class="eyebrow">Nossos serviços</span>
         <h2>Serviços de desentupimento em São Paulo</h2>
-        <p>Da pia da cozinha à coluna de esgoto do prédio: desentupimos casas, apartamentos, condomínios, comércios e empresas.</p>
+        <p>Da pia da cozinha à rede de esgoto: desentupimos casas, apartamentos, condomínios, comércios e empresas.</p>
       </div>
       <div class="services-grid">
         {servicos.map((s) => <ServiceCard servico={s} />)}
@@ -129,11 +131,11 @@ const posts = (await getCollection('blog'))
   </section>
 
   <section class="section">
-    <div class:list={['container', 'about-grid', { 'no-photo': !fotoEquipe }]}>
+    <div class:list={['container', 'about-grid', { 'no-photo': !fotoSobre }]}>
       {
-        fotoEquipe && (
+        fotoSobre && (
           <div class="about-photo">
-            <Image src={fotoEquipe.src} alt={fotoEquipe.alt} widths={[512]} sizes="(max-width: 900px) 100vw, 460px" />
+            <Image src={fotoSobre.src} alt={fotoSobre.alt} widths={[480, 800, 1200]} sizes="(max-width: 900px) 100vw, 460px" />
           </div>
         )
       }
@@ -172,9 +174,9 @@ const posts = (await getCollection('blog'))
       <section class="section">
         <div class="container">
           <div class="section-head">
-            <span class="eyebrow">Trabalhos realizados</span>
-            <h2>Serviços que já fizemos</h2>
-            <p>Fotos reais de atendimentos da {site.name} em São Paulo e Grande SP.</p>
+            <span class="eyebrow">O que fazemos</span>
+            <h2>Desentupimento com equipamento profissional</h2>
+            <p>Máquinas de cabo rotativo, hidrojateamento e sucção para cada tipo de entupimento.</p>
           </div>
           <Gallery limit={8} />
         </div>

@@ -6,14 +6,12 @@ import type { ImageMetadata } from 'astro';
 const arquivos = import.meta.glob<{ default: ImageMetadata }>('../assets/fotos/*.jpg', { eager: true });
 
 const alts: Record<string, string> = {
-  'desentupimento-de-esgoto': 'Técnico da Desentupidora Prime SP desentupindo rede de esgoto com máquina',
-  'desentupimento-de-pia': 'Desentupimento de pia de cozinha feito pela Desentupidora Prime SP',
-  'desentupimento-de-vaso-sanitario': 'Desentupimento de vaso sanitário feito pela Desentupidora Prime SP',
-  'desentupimento-de-ralo': 'Desentupimento de ralo feito pela Desentupidora Prime SP',
-  'limpeza-de-caixa-de-gordura': 'Limpeza de caixa de gordura feita pela Desentupidora Prime SP',
-  'desentupimento-de-coluna': 'Desentupimento de coluna de esgoto em prédio',
+  'desentupimento-de-esgoto': 'Máquina de cabo rotativo desentupindo caixa de esgoto',
+  'desentupimento-de-pia': 'Desentupimento de pia de cozinha',
+  'desentupimento-de-vaso-sanitario': 'Técnico desentupindo vaso sanitário com máquina',
+  'desentupimento-de-ralo': 'Técnico desentupindo ralo com máquina de cabo rotativo',
+  'limpeza-de-caixa-de-gordura': 'Limpeza de caixa de gordura com mangueira de sucção',
   hidrojateamento: 'Hidrojateamento de tubulação de esgoto',
-  'desentupimento-de-tanque': 'Desentupimento de tanque na área de serviço',
 };
 
 export interface Foto {
@@ -24,7 +22,7 @@ export interface Foto {
 export function fotoDoServico(slug: string): Foto | undefined {
   const mod = arquivos[`../assets/fotos/${slug}.jpg`];
   if (!mod) return undefined;
-  return { src: mod.default, alt: alts[slug] ?? 'Serviço realizado pela Desentupidora Prime SP' };
+  return { src: mod.default, alt: alts[slug] ?? 'Serviço de desentupimento' };
 }
 
 export function temFotos() {
