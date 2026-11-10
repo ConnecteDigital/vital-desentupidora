@@ -1,24 +1,30 @@
 // Dados centrais da empresa. Altere aqui e o site inteiro é atualizado.
 
-// ⚠️ PROVISÓRIO: trocar pelo WhatsApp/telefone real da Vital.
-// Formato: 55 + DDD + número, só dígitos
-const PHONE_DIGITS = '5519900000000';
+// WhatsApp e telefone. Formato: 55 + DDD + número, só dígitos
+const PHONE_DIGITS = '551148585822';
+
+// (11) 4858-5822 para fixo, (11) 98765-4321 para celular
+function formatPhone(d: string) {
+  const ddd = d.slice(2, 4);
+  const num = d.slice(4);
+  const split = num.length - 4;
+  return `(${ddd}) ${num.slice(0, split)}-${num.slice(split)}`;
+}
 
 export const site = {
   name: 'Vital Desentupidora',
   // ⚠️ PROVISÓRIO: confirmar o domínio
   url: 'https://www.vitaldesentupidora.com.br',
-  city: 'Campinas',
-  region: 'Campinas e região',
+  city: 'São Paulo',
+  region: 'São Paulo e Grande SP',
   state: 'SP',
   phoneDigits: PHONE_DIGITS,
-  // Exibição: (19) 90000-0000
-  phoneDisplay: `(${PHONE_DIGITS.slice(2, 4)}) ${PHONE_DIGITS.slice(4, 9)}-${PHONE_DIGITS.slice(9)}`,
+  phoneDisplay: formatPhone(PHONE_DIGITS),
   tel: `tel:+${PHONE_DIGITS}`,
   // ⚠️ PROVISÓRIO: confirmar o tempo de chegada com o cliente
   arrivalMinutes: 30,
   description:
-    'Desentupidora 24 horas em Campinas e região. Desentupimento de esgoto, pia, vaso sanitário, ralo, caixa de gordura e coluna de prédio. Chegamos em até 30 minutos, com garantia.',
+    'Desentupidora 24 horas em São Paulo e Grande SP. Desentupimento de esgoto, pia, vaso sanitário, ralo, caixa de gordura e coluna de prédio. Chegamos em até 30 minutos, com garantia.',
 };
 
 export const DEFAULT_WHATSAPP_MESSAGE =

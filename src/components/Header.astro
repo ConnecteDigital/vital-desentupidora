@@ -43,7 +43,7 @@ const zonas = bairrosPorZona();
                 <p class="submenu-zona">{g.zona}</p>
                 <ul>
                   {g.bairros.map((b) => (
-                    <li><a href={bairroPath(b)}>Desentupidora em {b.nome}</a></li>
+                    <li><a href={bairroPath(b)}>{b.nome}</a></li>
                   ))}
                 </ul>
               </div>
@@ -78,7 +78,7 @@ const zonas = bairrosPorZona();
                 <>
                   <li class="mobile-zona">{g.zona}</li>
                   {g.bairros.map((b) => (
-                    <li><a href={bairroPath(b)}><Icon name="pin" size={16} /> Desentupidora em {b.nome}</a></li>
+                    <li><a href={bairroPath(b)}><Icon name="pin" size={16} /> {b.nome}</a></li>
                   ))}
                 </>
               ))}

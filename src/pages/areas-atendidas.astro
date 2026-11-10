@@ -15,16 +15,16 @@ const crumbs = [
 ---
 
 <Base
-  title={`Áreas Atendidas: Desentupidora 24h em Campinas e Região | ${site.name}`}
-  description={`Desentupidora 24 horas em Campinas, Sumaré, Hortolândia, Paulínia, Valinhos, Indaiatuba, Americana, Piracicaba, Limeira e região. Chegamos em até ${site.arrivalMinutes} minutos.`}
+  title={`Áreas Atendidas: Desentupidora 24h em SP e Grande SP | ${site.name}`}
+  description={`Desentupidora 24 horas nas Zonas Norte, Sul, Leste, Oeste e Centro de São Paulo, no ABC, em Guarulhos, Osasco e em toda a Grande SP. Chegamos em até ${site.arrivalMinutes} minutos.`}
   schema={[breadcrumbSchema(crumbs)]}
 >
   <section class="hero page-hero">
     <div class="container">
       <Breadcrumbs items={crumbs} />
       <span class="eyebrow">Áreas atendidas</span>
-      <h1>Desentupidora em Campinas e região</h1>
-      <p class="hero-lead">Atendemos 24 horas em Campinas e nas cidades do DDD 19. Encontre a sua cidade ou bairro.</p>
+      <h1>Desentupidora em São Paulo e Grande SP</h1>
+      <p class="hero-lead">Atendemos 24 horas em todas as zonas da capital e nas cidades da Grande São Paulo. Encontre a sua região.</p>
       <CtaButtons />
     </div>
   </section>
@@ -41,7 +41,7 @@ const crumbs = [
               {g.bairros.map((b) => (
                 <li>
                   <a href={bairroPath(b)}>
-                    <Icon name="pin" size={16} /> Desentupidora em {b.nome}
+                    <Icon name="pin" size={16} /> Desentupidora {b.em}
                   </a>
                 </li>
               ))}

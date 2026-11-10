@@ -26,9 +26,9 @@ const year = new Date().getFullYear();
       </ul>
     </div>
     <div>
-      <h2 class="footer-title">Cidades e bairros</h2>
+      <h2 class="footer-title">Zonas e cidades</h2>
       <ul class="footer-links">
-        {bairros.map((b) => <li><a href={bairroPath(b)}>Desentupidora em {b.nome}</a></li>)}
+        {bairros.map((b) => <li><a href={bairroPath(b)}>Desentupidora {b.em}</a></li>)}
       </ul>
       <h2 class="footer-title">Conteúdo</h2>
       <ul class="footer-links">

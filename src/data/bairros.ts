@@ -1,176 +1,247 @@
-// Cidades e bairros atendidos (região do DDD 19).
-// Cada item vira uma página /desentupidora-em-<slug>/ com texto exclusivo.
-export type Zona = 'Campinas' | 'Região Metropolitana' | 'Piracicaba e Limeira' | 'Circuito das Águas e Mogiana';
+// Zonas da cidade de São Paulo e cidades da Grande São Paulo (DDD 11).
+// Cada item vira uma página própria, com texto exclusivo:
+//   zonas:   /desentupidora-na-zona-norte/, /desentupidora-no-centro-de-sp/ ...
+//   cidades: /desentupidora-em-guarulhos/ ...
+export type Zona =
+  | 'São Paulo (capital)'
+  | 'ABC Paulista'
+  | 'Região Oeste'
+  | 'Região Sudoeste'
+  | 'Região Norte'
+  | 'Alto Tietê';
 
 export interface Bairro {
   slug: string;
   nome: string;
+  // Como o nome aparece depois de "Desentupidora": "na Zona Norte", "em Guarulhos"
+  em: string;
   zona: Zona;
-  // true = bairro de Campinas; false = cidade
-  bairroDeCampinas?: boolean;
+  tipo: 'zona' | 'cidade';
   // Texto exclusivo da página para não repetir conteúdo entre áreas
   sobre: string;
+  // Zonas: principais bairros. Cidades: cidades vizinhas.
   vizinhos: string[];
 }
 
-// Regiões em foco aparecem destacadas nas listagens
-export const zonasPrioritarias: Zona[] = ['Campinas'];
-export const ordemZonas: Zona[] = ['Campinas', 'Região Metropolitana', 'Piracicaba e Limeira', 'Circuito das Águas e Mogiana'];
+// Grupos em foco aparecem destacados nas listagens
+export const zonasPrioritarias: Zona[] = ['São Paulo (capital)'];
+export const ordemZonas: Zona[] = ['São Paulo (capital)', 'ABC Paulista', 'Região Oeste', 'Região Norte', 'Alto Tietê', 'Região Sudoeste'];
 
 export const bairros: Bairro[] = [
+  // ---------- Capital ----------
   {
-    slug: 'campinas',
-    nome: 'Campinas',
-    zona: 'Campinas',
+    slug: 'zona-norte', nome: 'Zona Norte', em: 'na Zona Norte', zona: 'São Paulo (capital)', tipo: 'zona',
     sobre:
-      'Campinas tem de tudo: prédios altos no Cambuí e no Centro, casas e sobrados nos bairros residenciais, chácaras em Sousas e Joaquim Egídio e muitos comércios e restaurantes. Atendemos desentupimento de esgoto, pia, vaso, caixa de gordura e coluna de prédio em toda a cidade, 24 horas.',
-    vizinhos: ['Valinhos', 'Sumaré', 'Hortolândia', 'Paulínia'],
+      'A Zona Norte mistura sobrados antigos, prédios novos e muito comércio de bairro. Nas casas mais antigas de Santana, Casa Verde e Vila Maria são comuns redes de esgoto de manilha com raízes; nos prédios de Santana e Tucuruvi, coluna de esgoto e pia entupida.',
+    vizinhos: ['Santana', 'Tucuruvi', 'Casa Verde', 'Vila Maria', 'Vila Guilherme', 'Freguesia do Ó', 'Pirituba', 'Jaçanã', 'Mandaqui', 'Vila Medeiros'],
   },
   {
-    slug: 'cambui',
-    nome: 'Cambuí',
-    zona: 'Campinas',
-    bairroDeCampinas: true,
+    slug: 'zona-sul', nome: 'Zona Sul', em: 'na Zona Sul', zona: 'São Paulo (capital)', tipo: 'zona',
     sobre:
-      'O Cambuí concentra prédios residenciais, bares e restaurantes. Os chamados mais comuns são desentupimento de coluna de prédio, limpeza de caixa de gordura em cozinhas comerciais e pia entupida em apartamentos.',
-    vizinhos: ['Centro', 'Guanabara', 'Nova Campinas', 'Taquaral'],
+      'A Zona Sul é a maior região da capital, com prédios em Moema, Vila Mariana e Brooklin e bairros de casas em Santo Amaro, Jabaquara e Cidade Ademar. Atendemos de coluna de prédio e caixa de gordura de restaurante até esgoto entupido em casa térrea.',
+    vizinhos: ['Moema', 'Vila Mariana', 'Saúde', 'Brooklin', 'Santo Amaro', 'Campo Belo', 'Jabaquara', 'Ipiranga', 'Interlagos', 'Campo Limpo'],
   },
   {
-    slug: 'barao-geraldo',
-    nome: 'Barão Geraldo',
-    zona: 'Campinas',
-    bairroDeCampinas: true,
+    slug: 'zona-leste', nome: 'Zona Leste', em: 'na Zona Leste', zona: 'São Paulo (capital)', tipo: 'zona',
     sobre:
-      'Barão Geraldo, perto da Unicamp, tem muitas casas divididas em repúblicas e kitnets, além de condomínios. Com muita gente usando o mesmo banheiro e a mesma cozinha, vaso, ralo e caixa de gordura entopem com frequência.',
-    vizinhos: ['Cidade Universitária', 'Real Parque', 'Guará', 'Paulínia'],
+      'A Zona Leste é a região mais populosa de São Paulo, com muitas casas, sobrados e prédios no Tatuapé, Mooca e Anália Franco. Esgoto entupido, vaso sanitário e caixa de gordura são os chamados mais comuns por aqui.',
+    vizinhos: ['Tatuapé', 'Mooca', 'Anália Franco', 'Penha', 'Vila Prudente', 'Carrão', 'Vila Formosa', 'Itaquera', 'São Mateus', 'São Miguel Paulista'],
   },
   {
-    slug: 'taquaral',
-    nome: 'Taquaral',
-    zona: 'Campinas',
-    bairroDeCampinas: true,
+    slug: 'zona-oeste', nome: 'Zona Oeste', em: 'na Zona Oeste', zona: 'São Paulo (capital)', tipo: 'zona',
     sobre:
-      'O Taquaral, ao redor da lagoa, tem casas e sobrados mais antigos e prédios novos. Nas casas antigas, raízes e tubulações de manilha são causa comum de esgoto entupido; nos prédios, colunas e pias.',
-    vizinhos: ['Cambuí', 'Parque Taquaral', 'Jardim Chapadão', 'Castelo'],
+      'Na Zona Oeste convivem prédios residenciais, casas reformadas e muitos bares e restaurantes em Pinheiros, Vila Madalena e Lapa. Fazemos limpeza de caixa de gordura fora do horário de funcionamento e desentupimento de colunas em condomínios.',
+    vizinhos: ['Pinheiros', 'Vila Madalena', 'Perdizes', 'Lapa', 'Pompeia', 'Butantã', 'Vila Leopoldina', 'Alto de Pinheiros', 'Jaguaré', 'Rio Pequeno'],
   },
   {
-    slug: 'sousas',
-    nome: 'Sousas e Joaquim Egídio',
-    zona: 'Campinas',
-    bairroDeCampinas: true,
+    slug: 'centro-de-sp', nome: 'Centro de SP', em: 'no Centro de SP', zona: 'São Paulo (capital)', tipo: 'zona',
     sobre:
-      'Sousas e Joaquim Egídio têm chácaras, condomínios fechados e casas grandes com redes de esgoto longas e quintais com bastante terra e folhas. Atendemos desentupimento de esgoto, ralos externos e caixas de inspeção.',
-    vizinhos: ['Gramado', 'Jardim Botânico', 'Alphaville Campinas', 'Valinhos'],
+      'O Centro concentra prédios antigos, comércio e muitos restaurantes e lanchonetes. Colunas de esgoto de prédios antigos e caixas de gordura de cozinhas comerciais estão entre os nossos chamados mais frequentes na região central.',
+    vizinhos: ['República', 'Sé', 'Bela Vista', 'Consolação', 'Higienópolis', 'Santa Cecília', 'Liberdade', 'Bom Retiro', 'Brás', 'Cambuci'],
+  },
+
+  // ---------- ABC Paulista ----------
+  {
+    slug: 'santo-andre', nome: 'Santo André', em: 'em Santo André', zona: 'ABC Paulista', tipo: 'cidade',
+    sobre:
+      'Santo André tem prédios no centro e no Jardim, casas e sobrados nos bairros residenciais e muito comércio. Atendemos desentupimento de esgoto, coluna de prédio e caixa de gordura em toda a cidade.',
+    vizinhos: ['São Bernardo do Campo', 'São Caetano do Sul', 'Mauá'],
   },
   {
-    slug: 'ouro-verde',
-    nome: 'Ouro Verde',
-    zona: 'Campinas',
-    bairroDeCampinas: true,
+    slug: 'sao-bernardo-do-campo', nome: 'São Bernardo do Campo', em: 'em São Bernardo do Campo', zona: 'ABC Paulista', tipo: 'cidade',
     sobre:
-      'A região do Ouro Verde e do Campo Grande é uma das mais populosas de Campinas, com muitas casas, sobrados e comércios de bairro. Atendemos esgoto, pia, vaso e tanque entupidos, a qualquer hora.',
-    vizinhos: ['Campo Grande', 'Vida Nova', 'DIC', 'Hortolândia'],
+      'São Bernardo do Campo reúne bairros residenciais, condomínios e muitas empresas. Atendemos residências, condomínios e indústrias com desentupimento e hidrojateamento, inclusive de madrugada.',
+    vizinhos: ['Santo André', 'Diadema', 'São Caetano do Sul'],
   },
   {
-    slug: 'sumare',
-    nome: 'Sumaré',
-    zona: 'Região Metropolitana',
+    slug: 'sao-caetano-do-sul', nome: 'São Caetano do Sul', em: 'em São Caetano do Sul', zona: 'ABC Paulista', tipo: 'cidade',
     sobre:
-      'Sumaré tem muitos bairros residenciais e conjuntos habitacionais, além de comércio forte no centro e em Nova Veneza. Os chamados mais comuns são esgoto entupido, vaso sanitário e caixa de gordura.',
-    vizinhos: ['Hortolândia', 'Nova Odessa', 'Americana', 'Campinas'],
+      'São Caetano do Sul é uma cidade compacta e bem verticalizada, com muitos prédios residenciais. Os chamados mais comuns são coluna de esgoto, pia de apartamento e caixa de gordura de condomínio.',
+    vizinhos: ['Santo André', 'São Bernardo do Campo', 'Zona Sul de SP'],
   },
   {
-    slug: 'hortolandia',
-    nome: 'Hortolândia',
-    zona: 'Região Metropolitana',
+    slug: 'diadema', nome: 'Diadema', em: 'em Diadema', zona: 'ABC Paulista', tipo: 'cidade',
     sobre:
-      'Hortolândia cresceu rápido, com muitas casas e condomínios novos. Atendemos desentupimento de esgoto, pia, ralo e vaso sanitário em toda a cidade, inclusive de madrugada.',
-    vizinhos: ['Sumaré', 'Campinas', 'Monte Mor', 'Paulínia'],
+      'Diadema tem bairros densos de casas e sobrados e muitas indústrias. Atendemos esgoto, vaso sanitário, ralo e tanque entupidos, além de caixa de gordura em comércios e empresas.',
+    vizinhos: ['São Bernardo do Campo', 'Zona Sul de SP', 'Santo André'],
   },
   {
-    slug: 'paulinia',
-    nome: 'Paulínia',
-    zona: 'Região Metropolitana',
+    slug: 'maua', nome: 'Mauá', em: 'em Mauá', zona: 'ABC Paulista', tipo: 'cidade',
     sobre:
-      'Paulínia combina bairros residenciais, condomínios e empresas do polo industrial. Atendemos residências, comércios e empresas com desentupimento, limpeza de caixa de gordura e hidrojateamento.',
-    vizinhos: ['Campinas', 'Cosmópolis', 'Sumaré', 'Jaguariúna'],
+      'Mauá tem muitos bairros residenciais de casas e conjuntos habitacionais. Atendemos desentupimento de esgoto, pia, vaso e ralo 24 horas, com chegada rápida.',
+    vizinhos: ['Santo André', 'Ribeirão Pires', 'Zona Leste de SP'],
   },
   {
-    slug: 'valinhos',
-    nome: 'Valinhos',
-    zona: 'Região Metropolitana',
+    slug: 'ribeirao-pires', nome: 'Ribeirão Pires', em: 'em Ribeirão Pires', zona: 'ABC Paulista', tipo: 'cidade',
     sobre:
-      'Valinhos tem muitos condomínios horizontais, chácaras e casas com quintal grande. Redes de esgoto longas e caixas de inspeção com terra e raízes são chamados frequentes por aqui.',
-    vizinhos: ['Vinhedo', 'Campinas', 'Sousas', 'Louveira'],
+      'Ribeirão Pires tem casas com quintal, chácaras e ruas de ladeira. Folhas, terra e raízes nas caixas de inspeção são causas frequentes de esgoto entupido por aqui.',
+    vizinhos: ['Mauá', 'Rio Grande da Serra', 'Santo André'],
+  },
+
+  // ---------- Região Oeste ----------
+  {
+    slug: 'osasco', nome: 'Osasco', em: 'em Osasco', zona: 'Região Oeste', tipo: 'cidade',
+    sobre:
+      'Osasco tem um centro comercial forte, prédios novos e bairros grandes de casas. Atendemos desentupimento de esgoto, coluna de prédio, caixa de gordura e hidrojateamento em toda a cidade.',
+    vizinhos: ['Carapicuíba', 'Barueri', 'Zona Oeste de SP'],
   },
   {
-    slug: 'vinhedo',
-    nome: 'Vinhedo',
-    zona: 'Região Metropolitana',
+    slug: 'barueri', nome: 'Barueri', em: 'em Barueri', zona: 'Região Oeste', tipo: 'cidade',
     sobre:
-      'Vinhedo é uma cidade de condomínios residenciais e casas de alto padrão. Fazemos desentupimento com cuidado para preservar pisos e jardins, sem quebra-quebra sempre que possível.',
-    vizinhos: ['Valinhos', 'Louveira', 'Campinas'],
+      'Barueri reúne condomínios de Alphaville, prédios comerciais e bairros residenciais. Atendemos condomínios, empresas e residências com desentupimento e limpeza de caixa de gordura.',
+    vizinhos: ['Osasco', 'Santana de Parnaíba', 'Carapicuíba', 'Jandira'],
   },
   {
-    slug: 'indaiatuba',
-    nome: 'Indaiatuba',
-    zona: 'Região Metropolitana',
+    slug: 'carapicuiba', nome: 'Carapicuíba', em: 'em Carapicuíba', zona: 'Região Oeste', tipo: 'cidade',
     sobre:
-      'Indaiatuba tem muitos condomínios fechados, bairros planejados e comércio forte. Atendemos desentupimento de esgoto, pia, vaso e caixa de gordura em casas, prédios e restaurantes.',
-    vizinhos: ['Campinas', 'Monte Mor', 'Elias Fausto'],
+      'Carapicuíba tem muitos bairros de casas, sobrados e conjuntos habitacionais. Esgoto entupido, vaso sanitário e pia de cozinha são os chamados mais comuns.',
+    vizinhos: ['Osasco', 'Barueri', 'Cotia', 'Jandira'],
   },
   {
-    slug: 'americana',
-    nome: 'Americana',
-    zona: 'Região Metropolitana',
+    slug: 'santana-de-parnaiba', nome: 'Santana de Parnaíba', em: 'em Santana de Parnaíba', zona: 'Região Oeste', tipo: 'cidade',
     sobre:
-      'Americana tem bairros residenciais tradicionais, prédios no centro e muitas empresas. Nas casas mais antigas, tubulações de manilha e raízes costumam causar entupimento de esgoto.',
-    vizinhos: ['Santa Bárbara d’Oeste', 'Nova Odessa', 'Sumaré', 'Limeira'],
+      'Santana de Parnaíba tem condomínios fechados, casas de alto padrão e o centro histórico. Fazemos desentupimento com cuidado para preservar pisos e jardins, sem quebra-quebra sempre que possível.',
+    vizinhos: ['Barueri', 'Cajamar', 'Pirapora do Bom Jesus'],
   },
   {
-    slug: 'santa-barbara-doeste',
-    nome: 'Santa Bárbara d’Oeste',
-    zona: 'Região Metropolitana',
+    slug: 'cotia', nome: 'Cotia', em: 'em Cotia', zona: 'Região Oeste', tipo: 'cidade',
     sobre:
-      'Santa Bárbara d’Oeste tem muitos bairros de casas e sobrados. Atendemos esgoto entupido, ralo, pia e tanque, além de limpeza de caixa de gordura em residências e comércios.',
-    vizinhos: ['Americana', 'Nova Odessa', 'Piracicaba', 'Sumaré'],
+      'Cotia tem muitos condomínios horizontais, chácaras e bairros residenciais ao longo da Raposo Tavares. Redes de esgoto longas e caixas de inspeção com terra e raízes são chamados frequentes.',
+    vizinhos: ['Carapicuíba', 'Embu das Artes', 'Vargem Grande Paulista', 'Itapevi'],
   },
   {
-    slug: 'piracicaba',
-    nome: 'Piracicaba',
-    zona: 'Piracicaba e Limeira',
+    slug: 'itapevi', nome: 'Itapevi', em: 'em Itapevi', zona: 'Região Oeste', tipo: 'cidade',
     sobre:
-      'Piracicaba é uma cidade grande, com casas antigas perto do centro e muitos bairros novos. Atendemos desentupimento de esgoto, colunas de prédio, caixa de gordura e hidrojateamento.',
-    vizinhos: ['Santa Bárbara d’Oeste', 'Rio Claro', 'Limeira', 'Saltinho'],
+      'Itapevi cresceu com muitos bairros de casas e condomínios novos. Atendemos esgoto, pia, ralo e vaso entupidos a qualquer hora do dia ou da noite.',
+    vizinhos: ['Jandira', 'Barueri', 'Cotia'],
   },
   {
-    slug: 'limeira',
-    nome: 'Limeira',
-    zona: 'Piracicaba e Limeira',
+    slug: 'jandira', nome: 'Jandira', em: 'em Jandira', zona: 'Região Oeste', tipo: 'cidade',
     sobre:
-      'Limeira tem bairros residenciais, comércio no centro e muitas indústrias. Atendemos residências, comércios e empresas com desentupimento e limpeza de caixa de gordura 24 horas.',
-    vizinhos: ['Americana', 'Cordeirópolis', 'Iracemápolis', 'Rio Claro'],
+      'Jandira é uma cidade residencial, com muitas casas e sobrados. Atendemos desentupimento de esgoto, tanque, ralo e caixa de gordura com chegada rápida.',
+    vizinhos: ['Barueri', 'Itapevi', 'Carapicuíba'],
+  },
+
+  // ---------- Região Norte ----------
+  {
+    slug: 'guarulhos', nome: 'Guarulhos', em: 'em Guarulhos', zona: 'Região Norte', tipo: 'cidade',
+    sobre:
+      'Guarulhos é a segunda maior cidade do estado, com prédios no centro e no Macedo, bairros grandes de casas e muitas empresas perto do aeroporto. Atendemos residências, condomínios e empresas 24 horas.',
+    vizinhos: ['Zona Norte de SP', 'Zona Leste de SP', 'Arujá', 'Mairiporã'],
   },
   {
-    slug: 'jaguariuna',
-    nome: 'Jaguariúna',
-    zona: 'Circuito das Águas e Mogiana',
+    slug: 'caieiras', nome: 'Caieiras', em: 'em Caieiras', zona: 'Região Norte', tipo: 'cidade',
     sobre:
-      'Jaguariúna tem condomínios residenciais, chácaras e empresas. Atendemos desentupimento de esgoto, ralos e caixas de inspeção, além de caixa de gordura em comércios.',
-    vizinhos: ['Paulínia', 'Pedreira', 'Holambra', 'Santo Antônio de Posse'],
+      'Caieiras tem bairros residenciais tranquilos, casas com quintal e condomínios. Atendemos esgoto e ralos entupidos, além de caixas de inspeção com terra e folhas.',
+    vizinhos: ['Franco da Rocha', 'Mairiporã', 'Cajamar'],
   },
   {
-    slug: 'mogi-mirim',
-    nome: 'Mogi Mirim',
-    zona: 'Circuito das Águas e Mogiana',
+    slug: 'franco-da-rocha', nome: 'Franco da Rocha', em: 'em Franco da Rocha', zona: 'Região Norte', tipo: 'cidade',
     sobre:
-      'Mogi Mirim tem muitas casas e sobrados e comércio no centro. Atendemos esgoto, pia, vaso sanitário e ralo entupidos, a qualquer hora do dia ou da noite.',
-    vizinhos: ['Mogi Guaçu', 'Itapira', 'Santo Antônio de Posse', 'Holambra'],
+      'Franco da Rocha tem muitos bairros de casas e comércio no centro. Atendemos desentupimento de esgoto, pia, vaso e tanque, a qualquer hora.',
+    vizinhos: ['Caieiras', 'Francisco Morato', 'Mairiporã'],
+  },
+  {
+    slug: 'francisco-morato', nome: 'Francisco Morato', em: 'em Francisco Morato', zona: 'Região Norte', tipo: 'cidade',
+    sobre:
+      'Francisco Morato é uma cidade densa, com muitas casas em ruas de ladeira. Atendemos esgoto entupido, vaso sanitário e ralo com equipamento próprio, sem quebra-quebra sempre que possível.',
+    vizinhos: ['Franco da Rocha', 'Caieiras'],
+  },
+  {
+    slug: 'mairipora', nome: 'Mairiporã', em: 'em Mairiporã', zona: 'Região Norte', tipo: 'cidade',
+    sobre:
+      'Mairiporã tem chácaras, condomínios na serra e casas com quintal grande. Redes de esgoto longas e caixas de inspeção com raízes são chamados frequentes por aqui.',
+    vizinhos: ['Caieiras', 'Franco da Rocha', 'Guarulhos', 'Zona Norte de SP'],
+  },
+  {
+    slug: 'cajamar', nome: 'Cajamar', em: 'em Cajamar', zona: 'Região Norte', tipo: 'cidade',
+    sobre:
+      'Cajamar combina bairros residenciais e muitos centros de distribuição e empresas. Atendemos residências e empresas com desentupimento, caixa de gordura e hidrojateamento.',
+    vizinhos: ['Caieiras', 'Santana de Parnaíba', 'Franco da Rocha'],
+  },
+
+  // ---------- Alto Tietê ----------
+  {
+    slug: 'mogi-das-cruzes', nome: 'Mogi das Cruzes', em: 'em Mogi das Cruzes', zona: 'Alto Tietê', tipo: 'cidade',
+    sobre:
+      'Mogi das Cruzes é a maior cidade do Alto Tietê, com prédios no centro, bairros de casas e chácaras. Atendemos desentupimento de esgoto, coluna de prédio e caixa de gordura em toda a cidade.',
+    vizinhos: ['Suzano', 'Arujá', 'Biritiba Mirim'],
+  },
+  {
+    slug: 'suzano', nome: 'Suzano', em: 'em Suzano', zona: 'Alto Tietê', tipo: 'cidade',
+    sobre:
+      'Suzano tem bairros residenciais, comércio forte e indústrias. Atendemos esgoto, pia, vaso e ralo entupidos, além de limpeza de caixa de gordura em comércios.',
+    vizinhos: ['Mogi das Cruzes', 'Poá', 'Itaquaquecetuba', 'Ferraz de Vasconcelos'],
+  },
+  {
+    slug: 'itaquaquecetuba', nome: 'Itaquaquecetuba', em: 'em Itaquaquecetuba', zona: 'Alto Tietê', tipo: 'cidade',
+    sobre:
+      'Itaquaquecetuba é uma cidade populosa, com muitas casas e sobrados. Esgoto entupido, vaso sanitário e tanque são os chamados mais comuns.',
+    vizinhos: ['Poá', 'Suzano', 'Arujá', 'Guarulhos'],
+  },
+  {
+    slug: 'ferraz-de-vasconcelos', nome: 'Ferraz de Vasconcelos', em: 'em Ferraz de Vasconcelos', zona: 'Alto Tietê', tipo: 'cidade',
+    sobre:
+      'Ferraz de Vasconcelos é uma cidade residencial colada à Zona Leste. Atendemos desentupimento de esgoto, pia, ralo e caixa de gordura 24 horas.',
+    vizinhos: ['Poá', 'Suzano', 'Zona Leste de SP'],
+  },
+  {
+    slug: 'poa', nome: 'Poá', em: 'em Poá', zona: 'Alto Tietê', tipo: 'cidade',
+    sobre:
+      'Poá é uma cidade pequena e residencial, com casas e comércio no centro. Atendemos vaso, pia, ralo e esgoto entupidos com chegada rápida.',
+    vizinhos: ['Ferraz de Vasconcelos', 'Suzano', 'Itaquaquecetuba'],
+  },
+  {
+    slug: 'aruja', nome: 'Arujá', em: 'em Arujá', zona: 'Alto Tietê', tipo: 'cidade',
+    sobre:
+      'Arujá tem muitos condomínios residenciais e chácaras. Fazemos desentupimento de redes de esgoto longas e caixas de inspeção, preservando pisos e jardins sempre que possível.',
+    vizinhos: ['Guarulhos', 'Itaquaquecetuba', 'Mogi das Cruzes', 'Santa Isabel'],
+  },
+
+  // ---------- Região Sudoeste ----------
+  {
+    slug: 'taboao-da-serra', nome: 'Taboão da Serra', em: 'em Taboão da Serra', zona: 'Região Sudoeste', tipo: 'cidade',
+    sobre:
+      'Taboão da Serra é uma cidade densa, com muitos prédios e casas, colada à Zona Sul e à Zona Oeste da capital. Atendemos coluna de prédio, pia, vaso e esgoto entupidos.',
+    vizinhos: ['Embu das Artes', 'Zona Sul de SP', 'Zona Oeste de SP'],
+  },
+  {
+    slug: 'embu-das-artes', nome: 'Embu das Artes', em: 'em Embu das Artes', zona: 'Região Sudoeste', tipo: 'cidade',
+    sobre:
+      'Embu das Artes tem o centro turístico, bairros residenciais e muitas empresas às margens da Régis Bittencourt. Atendemos residências, restaurantes e empresas 24 horas.',
+    vizinhos: ['Taboão da Serra', 'Itapecerica da Serra', 'Cotia'],
+  },
+  {
+    slug: 'itapecerica-da-serra', nome: 'Itapecerica da Serra', em: 'em Itapecerica da Serra', zona: 'Região Sudoeste', tipo: 'cidade',
+    sobre:
+      'Itapecerica da Serra tem bairros residenciais, chácaras e condomínios. Atendemos desentupimento de esgoto, caixas de inspeção e ralos externos.',
+    vizinhos: ['Embu das Artes', 'Embu-Guaçu', 'Zona Sul de SP'],
   },
 ];
 
 export function bairroPath(b: Bairro) {
-  return `/desentupidora-em-${b.slug}/`;
+  const prep = b.em.split(' ')[0]; // na / no / em
+  return `/desentupidora-${prep}-${b.slug}/`;
 }
 
 export function bairrosPorZona() {

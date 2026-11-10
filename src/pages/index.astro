@@ -34,7 +34,7 @@ const faq = [
   },
   {
     q: 'Quais cidades vocês atendem?',
-    a: 'Campinas e cidades da região, como Sumaré, Hortolândia, Paulínia, Valinhos, Vinhedo, Indaiatuba, Americana, Santa Bárbara d’Oeste, Piracicaba, Limeira, Jaguariúna e Mogi Mirim.',
+    a: 'Toda a cidade de São Paulo (Zona Norte, Sul, Leste, Oeste e Centro) e a Grande SP, como Guarulhos, Osasco, Barueri, Santo André, São Bernardo, São Caetano, Diadema, Mogi das Cruzes, Taboão da Serra e Cotia.',
   },
   {
     q: 'Como chamo a desentupidora?',
@@ -51,7 +51,7 @@ const posts = (await getCollection('blog'))
 ---
 
 <Base
-  title={`Desentupidora 24h em Campinas | Chegamos em ${site.arrivalMinutes} min | ${site.name}`}
+  title={`Desentupidora 24h em São Paulo | Chegamos em ${site.arrivalMinutes} min | ${site.name}`}
   description={site.description}
   schema={[faqSchema(faq)]}
 >
@@ -70,8 +70,8 @@ const posts = (await getCollection('blog'))
       )
     }
     <div class="container hero-center">
-      <span class="eyebrow">Desentupidora em Campinas e região · Plantão 24h</span>
-      <h1>Desentupidora 24 horas em Campinas: <em>chegamos em até {site.arrivalMinutes} minutos</em></h1>
+      <span class="eyebrow">Desentupidora em São Paulo e Grande SP · Plantão 24h</span>
+      <h1>Desentupidora 24 horas em São Paulo: <em>chegamos em até {site.arrivalMinutes} minutos</em></h1>
       <p class="hero-lead">Esgoto, pia, vaso ou ralo entupido? Resolvemos hoje, a qualquer hora, sem quebra-quebra e com garantia.</p>
       <CtaButtons />
       <ul class="hero-badges">
@@ -87,7 +87,7 @@ const posts = (await getCollection('blog'))
       <div class="trust-item"><Icon name="clock" size={34} /><div><strong>24 horas</strong><span>Todos os dias, inclusive feriados</span></div></div>
       <div class="trust-item"><Icon name="bolt" size={34} /><div><strong>{site.arrivalMinutes} minutos</strong><span>Tempo de chegada</span></div></div>
       <div class="trust-item"><Icon name="shield" size={34} /><div><strong>Garantia</strong><span>Em todos os serviços</span></div></div>
-      <div class="trust-item"><Icon name="pin" size={34} /><div><strong>Região 19</strong><span>Campinas e cidades vizinhas</span></div></div>
+      <div class="trust-item"><Icon name="pin" size={34} /><div><strong>SP e Grande SP</strong><span>Capital e região metropolitana</span></div></div>
     </div>
   </section>
 
@@ -95,7 +95,7 @@ const posts = (await getCollection('blog'))
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Nossos serviços</span>
-        <h2>Serviços de desentupimento em Campinas</h2>
+        <h2>Serviços de desentupimento em São Paulo</h2>
         <p>Da pia da cozinha à coluna de esgoto do prédio: desentupimos casas, apartamentos, condomínios, comércios e empresas.</p>
       </div>
       <div class="services-grid">
@@ -174,7 +174,7 @@ const posts = (await getCollection('blog'))
           <div class="section-head">
             <span class="eyebrow">Trabalhos realizados</span>
             <h2>Serviços que já fizemos</h2>
-            <p>Fotos reais de atendimentos da {site.name} em Campinas e região.</p>
+            <p>Fotos reais de atendimentos da {site.name} em São Paulo e Grande SP.</p>
           </div>
           <Gallery limit={8} />
         </div>
@@ -187,7 +187,7 @@ const posts = (await getCollection('blog'))
       <div class="section-head">
         <span class="eyebrow">Áreas atendidas</span>
         <h2>Desentupidora perto de você</h2>
-        <p>Atendemos Campinas e as cidades da região do DDD 19.</p>
+        <p>Atendemos todas as zonas de São Paulo e as cidades da Grande SP.</p>
       </div>
       <div class="zones">
         {
@@ -201,7 +201,7 @@ const posts = (await getCollection('blog'))
                 {g.bairros.map((b) => (
                   <li>
                     <a href={bairroPath(b)}>
-                      <Icon name="pin" size={16} /> Desentupidora em {b.nome}
+                      <Icon name="pin" size={16} /> Desentupidora {b.em}
                     </a>
                   </li>
                 ))}

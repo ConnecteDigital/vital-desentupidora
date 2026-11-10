@@ -31,7 +31,7 @@ const faq = [
   ...servico.faq,
   {
     q: `Em quanto tempo vocês chegam para ${servico.nome.toLowerCase()}?`,
-    a: `Atendemos 24 horas e chegamos em até ${site.arrivalMinutes} minutos em Campinas e região.`,
+    a: `Atendemos 24 horas e chegamos em até ${site.arrivalMinutes} minutos em São Paulo e Grande SP.`,
   },
 ];
 const foto = fotoDoServico(servico.slug);
@@ -47,7 +47,7 @@ const msg = `Olá! Vim pelo site da ${site.name} e preciso de ${servico.nome.toL
   <section class="hero page-hero">
     <div class="container">
       <Breadcrumbs items={crumbs} />
-      <span class="eyebrow">Serviço 24 horas em Campinas e região</span>
+      <span class="eyebrow">Serviço 24 horas em São Paulo e Grande SP</span>
       <h1>{servico.keyword}</h1>
       <p class="hero-lead">{servico.resumo} Atendimento 24h, chegada em até {site.arrivalMinutes} minutos e garantia no serviço.</p>
       <CtaButtons message={msg} />
@@ -63,7 +63,7 @@ const msg = `Olá! Vim pelo site da ${site.name} e preciso de ${servico.nome.toL
           foto && (
             <figure class="service-figure">
               <Image src={foto.src} alt={foto.alt} widths={[480, 800, 1100]} sizes="(max-width: 960px) 100vw, 760px" />
-              <figcaption>{servico.nome}: serviço realizado pela {site.name} em Campinas e região.</figcaption>
+              <figcaption>{servico.nome}: serviço realizado pela {site.name} em São Paulo e Grande SP.</figcaption>
             </figure>
           )
         }
@@ -87,7 +87,7 @@ const msg = `Olá! Vim pelo site da ${site.name} e preciso de ${servico.nome.toL
 
         <h2>{servico.nome} por cidade e bairro</h2>
         <p>
-          Atendemos {servico.nome.toLowerCase()} em Campinas e região, incluindo:
+          Atendemos {servico.nome.toLowerCase()} em São Paulo e Grande SP, incluindo:
           {bairros.map((b, i) => (
             <>
               <a href={bairroPath(b)}>{b.nome}</a>{i < bairros.length - 1 ? ', ' : '.'}

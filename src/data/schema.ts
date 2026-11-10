@@ -24,9 +24,10 @@ export function localBusinessSchema() {
       addressCountry: 'BR',
     },
     areaServed: [
+      { '@type': 'City', name: 'São Paulo - SP' },
       ...bairros.map((b) =>
-        b.bairroDeCampinas
-          ? { '@type': 'Place', name: `${b.nome}, Campinas - SP` }
+        b.tipo === 'zona'
+          ? { '@type': 'Place', name: `${b.nome}, São Paulo - SP` }
           : { '@type': 'City', name: `${b.nome} - SP` },
       ),
     ],

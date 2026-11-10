@@ -24,14 +24,14 @@ export const servicos: Servico[] = [
   {
     slug: 'desentupimento-de-esgoto',
     nome: 'Desentupimento de Esgoto',
-    keyword: 'Desentupimento de esgoto em Campinas',
+    keyword: 'Desentupimento de esgoto em São Paulo',
     resumo: 'Rede de esgoto, caixas de inspeção e tubulações desentupidas com máquina, sem quebra-quebra.',
     metaDescription:
-      'Desentupimento de esgoto 24h em Campinas e região. Rede, caixa de inspeção e tubulação. Chegamos em até 30 minutos, com garantia. Chame no WhatsApp.',
+      'Desentupimento de esgoto 24h em São Paulo e Grande SP. Rede, caixa de inspeção e tubulação. Chegamos em até 30 minutos, com garantia. Chame no WhatsApp.',
     icon: 'pipe',
     destaque: true,
     intro: [
-      'Esgoto entupido é emergência: água suja voltando pelo ralo, mau cheiro no quintal e caixa de inspeção transbordando. A Vital Desentupidora atende 24 horas, inclusive fins de semana e feriados, em Campinas e nas cidades da região.',
+      'Esgoto entupido é emergência: água suja voltando pelo ralo, mau cheiro no quintal e caixa de inspeção transbordando. A Vital Desentupidora atende 24 horas, inclusive fins de semana e feriados, em toda a cidade de São Paulo e na Grande SP.',
       'Usamos máquinas de cabo rotativo (molas) e, quando necessário, hidrojateamento para remover gordura, raízes, areia e objetos da rede, sem quebrar piso nem parede sempre que possível.',
     ],
     sinais: [
@@ -65,10 +65,10 @@ export const servicos: Servico[] = [
   {
     slug: 'desentupimento-de-pia',
     nome: 'Desentupimento de Pia',
-    keyword: 'Desentupimento de pia em Campinas',
+    keyword: 'Desentupimento de pia em São Paulo',
     resumo: 'Pia de cozinha e de banheiro desentupida, inclusive com gordura acumulada no encanamento.',
     metaDescription:
-      'Pia entupida? Desentupimento de pia de cozinha e banheiro 24h em Campinas e região. Chegamos em até 30 minutos, com garantia.',
+      'Pia entupida? Desentupimento de pia de cozinha e banheiro 24h em São Paulo e Grande SP. Chegamos em até 30 minutos, com garantia.',
     icon: 'sink',
     destaque: true,
     intro: [
@@ -101,10 +101,10 @@ export const servicos: Servico[] = [
   {
     slug: 'desentupimento-de-vaso-sanitario',
     nome: 'Desentupimento de Vaso Sanitário',
-    keyword: 'Desentupimento de vaso sanitário em Campinas',
+    keyword: 'Desentupimento de vaso sanitário em São Paulo',
     resumo: 'Vaso que não desce ou transborda desentupido sem precisar retirar a louça na maioria dos casos.',
     metaDescription:
-      'Vaso sanitário entupido? Desentupimento 24h em Campinas e região, sem quebra-quebra. Chegamos em até 30 minutos, com garantia.',
+      'Vaso sanitário entupido? Desentupimento 24h em São Paulo e Grande SP, sem quebra-quebra. Chegamos em até 30 minutos, com garantia.',
     icon: 'toilet',
     destaque: true,
     intro: [
@@ -137,10 +137,10 @@ export const servicos: Servico[] = [
   {
     slug: 'desentupimento-de-ralo',
     nome: 'Desentupimento de Ralo',
-    keyword: 'Desentupimento de ralo em Campinas',
+    keyword: 'Desentupimento de ralo em São Paulo',
     resumo: 'Ralo de box, área de serviço e quintal desentupido, com fim do mau cheiro e da água empoçada.',
     metaDescription:
-      'Ralo entupido no box, área de serviço ou quintal? Desentupidora 24h em Campinas e região. Chegamos em até 30 minutos, com garantia.',
+      'Ralo entupido no box, área de serviço ou quintal? Desentupidora 24h em São Paulo e Grande SP. Chegamos em até 30 minutos, com garantia.',
     icon: 'drain',
     intro: [
       'Cabelo, sabão, areia e folhas vão fechando o ralo aos poucos até a água empoçar no box ou no quintal. Em dia de chuva forte, ralo entupido pode alagar a casa.',
@@ -168,10 +168,10 @@ export const servicos: Servico[] = [
   {
     slug: 'limpeza-de-caixa-de-gordura',
     nome: 'Limpeza de Caixa de Gordura',
-    keyword: 'Limpeza de caixa de gordura em Campinas',
+    keyword: 'Limpeza de caixa de gordura em São Paulo',
     resumo: 'Caixa de gordura limpa e desobstruída em casas, condomínios, restaurantes e comércios.',
     metaDescription:
-      'Limpeza e desentupimento de caixa de gordura em Campinas e região, para casas, condomínios e restaurantes. Atendimento 24h, com garantia.',
+      'Limpeza e desentupimento de caixa de gordura em São Paulo e Grande SP, para casas, condomínios e restaurantes. Atendimento 24h, com garantia.',
     icon: 'grease',
     destaque: true,
     intro: [
@@ -204,10 +204,10 @@ export const servicos: Servico[] = [
   {
     slug: 'desentupimento-de-coluna',
     nome: 'Desentupimento de Coluna de Prédio',
-    keyword: 'Desentupimento de coluna de prédio em Campinas',
+    keyword: 'Desentupimento de coluna de prédio em São Paulo',
     resumo: 'Colunas de esgoto e prumadas de condomínios desentupidas, com atendimento a síndicos e administradoras.',
     metaDescription:
-      'Desentupimento de coluna e prumada de esgoto em prédios e condomínios de Campinas e região. Atendimento 24h para síndicos, com garantia.',
+      'Desentupimento de coluna e prumada de esgoto em prédios e condomínios de São Paulo e Grande SP. Atendimento 24h para síndicos, com garantia.',
     icon: 'building',
     intro: [
       'Quando a coluna de esgoto de um prédio entope, o problema aparece nos andares de baixo: água voltando pelo ralo, pela pia ou pelo vaso de vários apartamentos ao mesmo tempo.',
@@ -235,10 +235,10 @@ export const servicos: Servico[] = [
   {
     slug: 'hidrojateamento',
     nome: 'Hidrojateamento',
-    keyword: 'Hidrojateamento em Campinas',
+    keyword: 'Hidrojateamento em São Paulo',
     resumo: 'Jato de água em alta pressão para limpar gordura, raízes e incrustações por dentro da tubulação.',
     metaDescription:
-      'Hidrojateamento de tubulações de esgoto e gordura em Campinas e região. Limpeza completa por dentro do cano. Atendimento 24h, com garantia.',
+      'Hidrojateamento de tubulações de esgoto e gordura em São Paulo e Grande SP. Limpeza completa por dentro do cano. Atendimento 24h, com garantia.',
     icon: 'jet',
     intro: [
       'O hidrojateamento usa água em alta pressão para limpar a tubulação por dentro, removendo gordura, lodo, areia e raízes que a máquina de cabo só consegue furar.',
@@ -266,10 +266,10 @@ export const servicos: Servico[] = [
   {
     slug: 'desentupimento-de-tanque',
     nome: 'Desentupimento de Tanque',
-    keyword: 'Desentupimento de tanque e máquina de lavar em Campinas',
+    keyword: 'Desentupimento de tanque e máquina de lavar em São Paulo',
     resumo: 'Tanque e saída da máquina de lavar desentupidos, sem água voltando na área de serviço.',
     metaDescription:
-      'Tanque ou saída da máquina de lavar entupida? Desentupidora 24h em Campinas e região. Chegamos em até 30 minutos, com garantia.',
+      'Tanque ou saída da máquina de lavar entupida? Desentupidora 24h em São Paulo e Grande SP. Chegamos em até 30 minutos, com garantia.',
     icon: 'faucet',
     intro: [
       'Sabão em pó, fiapos de roupa e areia vão se acumulando na tubulação do tanque e da máquina de lavar. Um dia a máquina esvazia e a água volta pelo ralo da área de serviço.',
