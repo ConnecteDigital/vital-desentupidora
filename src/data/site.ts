@@ -23,10 +23,9 @@ export const site = {
   phoneDigits: PHONE_DIGITS,
   phoneDisplay: formatPhone(PHONE_DIGITS),
   tel: `tel:+${PHONE_DIGITS}`,
-  // ⚠️ PROVISÓRIO: confirmar o tempo de chegada com o cliente
-  arrivalMinutes: 30,
+  arrivalMinutes: 20,
   description:
-    'Desentupidora 24 horas em São Paulo e Grande SP. Desentupimento de esgoto, pia, vaso sanitário, ralo e caixa de gordura, além de hidrojateamento. Chegamos em até 30 minutos, com garantia.',
+    'Desentupidora 24 horas em São Paulo e Grande SP. Desentupimento de esgoto, pia, vaso sanitário, ralo, caixa de gordura, limpa fossa e hidrojateamento. Chegamos em até 20 minutos, com garantia.',
 };
 
 export const DEFAULT_WHATSAPP_MESSAGE =

@@ -7,10 +7,11 @@ const arquivos = import.meta.glob<{ default: ImageMetadata }>('../assets/fotos/*
 
 const alts: Record<string, string> = {
   'desentupimento-de-esgoto': 'Máquina de cabo rotativo desentupindo caixa de esgoto',
-  'desentupimento-de-pia': 'Técnico usando máquina de desentupimento com cabo rotativo',
+  'desentupimento-de-pia': 'Técnico desentupindo pia de cozinha com desentupidor',
   'desentupimento-de-vaso-sanitario': 'Técnico desentupindo vaso sanitário com máquina',
   'desentupimento-de-ralo': 'Técnico desentupindo ralo com máquina de cabo rotativo',
   'limpeza-de-caixa-de-gordura': 'Limpeza de caixa de gordura com mangueira de sucção',
+  'limpa-fossa': 'Esgotamento de fossa com mangueira de sucção',
   hidrojateamento: 'Jato de água em alta pressão limpando caixa de esgoto',
 };
 

@@ -27,7 +27,7 @@ export const servicos: Servico[] = [
     keyword: 'Desentupimento de esgoto em São Paulo',
     resumo: 'Rede de esgoto, caixas de inspeção e tubulações desentupidas com máquina, sem quebra-quebra.',
     metaDescription:
-      'Desentupimento de esgoto 24h em São Paulo e Grande SP. Rede, caixa de inspeção e tubulação. Chegamos em até 30 minutos, com garantia. Chame no WhatsApp.',
+      'Desentupimento de esgoto 24h em São Paulo e Grande SP. Rede, caixa de inspeção e tubulação. Chegamos em até 20 minutos, com garantia. Chame no WhatsApp.',
     icon: 'pipe',
     destaque: true,
     intro: [
@@ -68,7 +68,7 @@ export const servicos: Servico[] = [
     keyword: 'Desentupimento de pia em São Paulo',
     resumo: 'Pia de cozinha e de banheiro desentupida, inclusive com gordura acumulada no encanamento.',
     metaDescription:
-      'Pia entupida? Desentupimento de pia de cozinha e banheiro 24h em São Paulo e Grande SP. Chegamos em até 30 minutos, com garantia.',
+      'Pia entupida? Desentupimento de pia de cozinha e banheiro 24h em São Paulo e Grande SP. Chegamos em até 20 minutos, com garantia.',
     icon: 'sink',
     destaque: true,
     intro: [
@@ -104,7 +104,7 @@ export const servicos: Servico[] = [
     keyword: 'Desentupimento de vaso sanitário em São Paulo',
     resumo: 'Vaso que não desce ou transborda desentupido sem precisar retirar a louça na maioria dos casos.',
     metaDescription:
-      'Vaso sanitário entupido? Desentupimento 24h em São Paulo e Grande SP, sem quebra-quebra. Chegamos em até 30 minutos, com garantia.',
+      'Vaso sanitário entupido? Desentupimento 24h em São Paulo e Grande SP, sem quebra-quebra. Chegamos em até 20 minutos, com garantia.',
     icon: 'toilet',
     destaque: true,
     intro: [
@@ -140,7 +140,7 @@ export const servicos: Servico[] = [
     keyword: 'Desentupimento de ralo em São Paulo',
     resumo: 'Ralo de box, área de serviço e quintal desentupido, com fim do mau cheiro e da água empoçada.',
     metaDescription:
-      'Ralo entupido no box, área de serviço ou quintal? Desentupidora 24h em São Paulo e Grande SP. Chegamos em até 30 minutos, com garantia.',
+      'Ralo entupido no box, área de serviço ou quintal? Desentupidora 24h em São Paulo e Grande SP. Chegamos em até 20 minutos, com garantia.',
     icon: 'drain',
     intro: [
       'Cabelo, sabão, areia e folhas vão fechando o ralo aos poucos até a água empoçar no box ou no quintal. Em dia de chuva forte, ralo entupido pode alagar a casa.',
@@ -198,6 +198,42 @@ export const servicos: Servico[] = [
       {
         q: 'Atendem restaurantes fora do horário de funcionamento?',
         a: 'Sim. Como atendemos 24 horas, podemos fazer a limpeza à noite ou de madrugada, sem atrapalhar o seu movimento.',
+      },
+    ],
+  },
+  {
+    slug: 'limpa-fossa',
+    nome: 'Limpa Fossa',
+    keyword: 'Limpa fossa em São Paulo',
+    resumo: 'Esgotamento e limpeza de fossa séptica e sumidouro com mangueira de sucção.',
+    metaDescription:
+      'Limpa fossa 24h em São Paulo e Grande SP: esgotamento de fossa séptica e sumidouro em casas, chácaras, condomínios e comércios. Atendimento rápido, com garantia.',
+    icon: 'tank',
+    intro: [
+      'Fossa cheia é emergência: o esgoto para de escoar, volta pelos ralos e o mau cheiro toma conta do quintal. Em imóveis sem rede de esgoto, como chácaras, sítios e casas em bairros afastados, a fossa precisa ser esvaziada de tempos em tempos.',
+      'Fazemos o esgotamento da fossa séptica e do sumidouro com mangueira de sucção, retirando os resíduos acumulados e deixando a fossa pronta para voltar a funcionar.',
+    ],
+    sinais: [
+      'Esgoto voltando pelos ralos e pelo vaso sanitário',
+      'Mau cheiro forte no quintal ou perto da tampa da fossa',
+      'Terreno úmido ou com água minando em volta da fossa',
+      'Vasos e ralos escoando devagar em toda a casa',
+      'Muito tempo sem limpeza (mais de 1 ano)',
+    ],
+    comoFazemos: [
+      'Localizamos e abrimos a tampa da fossa',
+      'Fazemos a sucção dos resíduos com mangueira',
+      'Conferimos o sumidouro e as tubulações de entrada',
+      'Fechamos a fossa e orientamos sobre a próxima limpeza',
+    ],
+    faq: [
+      {
+        q: 'De quanto em quanto tempo limpar a fossa?',
+        a: 'Depende do tamanho da fossa e de quantas pessoas usam o imóvel. Em casas, geralmente a cada 1 a 2 anos. Avaliamos o seu caso na visita.',
+      },
+      {
+        q: 'Atendem chácaras e sítios?',
+        a: 'Sim. Atendemos casas, chácaras, sítios, condomínios e comércios em São Paulo e na Grande SP.',
       },
     ],
   },

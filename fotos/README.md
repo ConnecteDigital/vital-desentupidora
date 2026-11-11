@@ -10,6 +10,7 @@ Crie uma pasta com o nome (slug) do serviço e coloque as fotos dentro. A primei
 | `desentupimento-de-vaso-sanitario/` | Desentupimento de Vaso Sanitário |
 | `desentupimento-de-ralo/` | Desentupimento de Ralo |
 | `limpeza-de-caixa-de-gordura/` | Limpeza de Caixa de Gordura |
+| `limpa-fossa/` | Limpa Fossa |
 | `hidrojateamento/` | Hidrojateamento |
 
 Para trocar uma foto já convertida, apague o `.jpg` correspondente em `src/assets/fotos/`.
